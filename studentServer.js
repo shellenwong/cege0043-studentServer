@@ -26,12 +26,63 @@ app.use(function(req,res,next){
 });
 
 
-//Add GET functionality
-app.get('/test.html',function(req,res){
+//Getting More Sophisticated – Using Variables 
+app.get('/:fileName',function(req,res){
 	//run some server-side code
-	console.log('test.html requested');
-	//node that__dirname gives the path to the studentServer.js file
-	res.sendFile(__dirname+'/test.html')
+	var fileName=req.params.fileName;
+	console.log(fileName+'requested');
+	//note that __dirname gives the path to the studentServer.js file
+	res.sendFile(__dirname+'/'+fileName);
 });
+
+
+
+
+
+
+
+
+//Add GET functionality
+//app.get('/test.html',function(req,res){console.log('test.html requested');res.sendFile(__dirname+'/test.html')});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
