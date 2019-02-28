@@ -26,14 +26,27 @@ app.use(function(req,res,next){
 });
 
 
-//Getting More Sophisticated – Using Variables 
-app.get('/:fileName',function(req,res){
-	//run some server-side code
-	var fileName=req.params.fileName;
-	console.log(fileName+'requested');
-	//note that __dirname gives the path to the studentServer.js file
-	res.sendFile(__dirname+'/'+fileName);
-});
+//Getting More Sophisticated – Using Express Static Routes 
+
+//serve static files eg.html,css
+//this should always be the last line in the server file
+app.use(express.static(__dirname));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -46,7 +59,8 @@ app.get('/:fileName',function(req,res){
 //app.get('/test.html',function(req,res){console.log('test.html requested');res.sendFile(__dirname+'/test.html')});
 
 
-
+//Getting More Sophisticated – Using Variables 
+//app.get('/:fileName',function(req,res){var fileName=req.params.fileName;console.log(fileName+'requested');res.sendFile(__dirname+'/'+fileName);});
 
 
 
