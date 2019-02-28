@@ -10,7 +10,7 @@ var http=require('http');
 var httpServer=http.createServer(app);
 httpServer.listen(4480);
 
-app.get('/',function(req.res){
+app.get('/',function(req,res){
 	res.send('testing testing from the HTTP server');
 });
 
