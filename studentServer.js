@@ -15,8 +15,15 @@ app.get('/',function(req,res){
 });
 
 
+//add to other pieces of code to the server to log the requests on the console as they come in (this is useful for debugging) 
 
-
+//adding functionality to log the requests
+add.use(function(req,res,next){
+	var filename=path.basename(req.url);
+	var extension=path.extname(filename);
+	console.log('The file'+filename+'was requested.');
+	next();
+});
 
 
 
