@@ -26,6 +26,12 @@ app.use(function(req,res,next){
 });
 
 
+
+//Getting More Sophisticated – Using Variables 
+app.get('/:fileName',function(req,res){var fileName=req.params.fileName;console.log(fileName+'requested');res.sendFile(__dirname+'/'+fileName);});
+
+
+
 //Testing on a phone
 var app=express();
 app.use(function(req,res,next){
@@ -33,9 +39,6 @@ app.use(function(req,res,next){
 	res.header('Access-Control-Allow-Headers','X-Requested-With');
 	next();
 });
-
-
-
 
 
 //Getting More Sophisticated – Using Express Static Routes 
@@ -52,62 +55,8 @@ app.use(express.static(__dirname));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Add GET functionality
 //app.get('/test.html',function(req,res){console.log('test.html requested');res.sendFile(__dirname+'/test.html')});
-
-
-//Getting More Sophisticated – Using Variables 
-//app.get('/:fileName',function(req,res){var fileName=req.params.fileName;console.log(fileName+'requested');res.sendFile(__dirname+'/'+fileName);});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
