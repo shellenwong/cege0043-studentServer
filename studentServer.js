@@ -58,6 +58,16 @@ app.get('/postgistest',function(req,res){
 });
 
 
+app.post('/reflectData',function(req,res){
+	//note that we are using POST here as we are uploading data
+	//so the parameters form part of the BODY of the request rather than the RESTful API
+	console.dir(req.body);
+	//for now, just echo the request back to the client
+});
+
+
+
+
 app.get('/getFormData/:port_id',function(req,res){
 	pool.connect(function(err,client,done){
 		if(err){
